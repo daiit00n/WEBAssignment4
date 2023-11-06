@@ -1,0 +1,68 @@
+
+
+body{
+    font-family: Helvetica serif;
+}
+
+#icon{
+    max-width: 243px;
+}
+
+.dropdown-menu {
+    margin-right:-1000px;
+}
+
+.page-title{
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.form{
+    padding: 10px 0 10px 0;
+    background-color: gold;
+}
+
+.contact-label{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.footer{
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/* Define the animation class for adding items */
+@keyframes addItemAnimation {
+    0% { transform: scale(1) translateY(0); opacity: 1; }
+    50% { transform: scale(1.1) translateY(-10px); opacity: 0.7; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Define the animation class for removing items */
+@keyframes removeItemAnimation {
+    0% { transform: scale(1) translateY(0); opacity: 1; }
+    50% { transform: scale(0.9) translateY(10px); opacity: 0.7; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Apply the animation to the cart element */
+.cart-animation-add {
+    animation: addItemAnimation 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.cart-animation-remove {
+    animation: removeItemAnimation 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Add a transition for smoother cart updates */
+.cart {
+    transition: transform 0.3s, opacity 0.3s;
+    transform-origin: center bottom;
+    will-change: transform;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="chart.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="chart-container">
+        <canvas id="Water Sales Diagram"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="Water Sales PieChart"></canvas>
+    </div>
+
+
+<style>
+    .chart-container {
+    width: 50%;
+    display: inline-block;
+    padding: 10px;
+}
+
+</style>
+
+
+<script>
+    // Data for the bar chart
+    const barChartData = {
+        labels: ['Tassay Lemon', 'Tassay Mint', 'Tassay Mango', 'Tassay Raspberry'],
+        datasets: [
+            {
+                label: 'Bar Chart Data',
+                data: [10, 20, 30, 40],
+                backgroundColor: ['yellow', 'green', 'orange', 'pink'],
+            },
+        ],
+    };
+
+    // Data for the pie chart
+    const pieChartData = {
+        labels: ['Tassay Lemon', 'Tassay Mint', 'Tassay Mango', 'Tassay Raspberry'],
+        datasets: [
+            {
+                data: [40, 20, 10, 30],
+                backgroundColor: ['yellow', 'green', 'orange', 'pink'],
+            },
+        ],
+    };
+
+    // Create the bar chart
+    const barChart = new Chart(document.getElementById('Water Sales Diagram'), {
+        type: 'bar',
+        data: barChartData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+        },
+    });
+
+    // Create the pie chart
+    const pieChart = new Chart(document.getElementById('Water Sales PieChart'), {
+        type: 'pie',
+        data: pieChartData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+        },
+    });
+</script>
+</body>
+</html>
